@@ -7,12 +7,13 @@ const ResultView = function () {
 ResultView.prototype.bindEvents = function () {
   PubSub.subscribe('PrimeChecker:is-prime', (event) => {
     const result = event.detail;
-    handleResult(result);
+    this.handleResult(result);
   });
 };
 
 ResultView.prototype.handleResult = function (result) {
   const displayElement = document.querySelector('#result');
+  // console.log(result);
   if (result === true) {
     displayElement.textContent = "This number is prime.";
   }
@@ -21,4 +22,4 @@ ResultView.prototype.handleResult = function (result) {
   }
 };
 
-modules.exports = ResultView;
+module.exports = ResultView;
