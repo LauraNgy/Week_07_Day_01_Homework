@@ -1,10 +1,10 @@
 {
-  "name": "wordcounter",
+  "name": "primechecker",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha src/specs",
     "build": "webpack -w"
   },
   "keywords": [],
@@ -13,5 +13,8 @@
   "dependencies": {
     "webpack": "^4.17.2",
     "webpack-cli": "^3.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
   }
 }
