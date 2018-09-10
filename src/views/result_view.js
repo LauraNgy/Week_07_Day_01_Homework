@@ -1,5 +1,14 @@
+const PubSub = require('../helpers/pub_sub.js')
+
 const ResultView = function () {
 
+};
+
+ResultView.prototype.bindEvents = function () {
+  PubSub.subscribe('PrimeChecker:is-prime', (event) => {
+    const result = event.detail;
+    handleResult(result);
+  });
 };
 
 ResultView.prototype.handleResult = function (result) {
