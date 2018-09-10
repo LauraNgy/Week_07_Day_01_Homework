@@ -4,6 +4,15 @@ const PrimeChecker = function () {
 
 };
 
+PrimeChecker.prototype.bindEvents = function () {
+  PubSub.subscribe('FormView:number-submit', (event) => {
+    const number = event.detail;
+    const result = this.checkPrime(number);
+    PubSub.publish('PrimeChecker:is-prime', number);
+  });
+
+};
+
 PrimeChecker.prototype.checkPrime = function (number) {
   let result = false;
   if (number > 2) {
